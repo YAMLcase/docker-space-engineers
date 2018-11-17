@@ -25,10 +25,10 @@ docker run \
 - C:\data\ on the container is for saves.
 
 ### New Scenario
-Create a `SpaceEngineers-Dedicated.cfg` file with the `SpaceEngineersDedicated.exe` console program.
+Create a `SpaceEngineers-Dedicated.cfg` file with the `SpaceEngineersDedicated.exe` console program.  Save this to `C:\data` on the container.
 
 ### Import Save
-Copy the `Saves` directory into `C:\data`.  Edit the `LastSession.sbl` document and change the `<Path>c:\path\to\save</Path>` to take into account the new folder structure.
+Copy the `Saves` directory into `C:\data`.  Edit the `LastSession.sbl` document and change the `<Path>c:\path\to\save</Path>` to take into account the new location.
 
 ### Save and Exit Gracefully
 Unfortunately the VRage remote client doesn't have a save or quit feature.  you will need to execute the following command on the docker container to prompt a save:
@@ -36,6 +36,8 @@ Unfortunately the VRage remote client doesn't have a save or quit feature.  you 
 ```
 C:\> taskkill /IM SpaceEngineersDedicated.exe
 ```
+</br>
+
 If this command fails to stop the server, you will just need to wait for the autosave time to pass and then stop the container normally.
 
 ### Orchestration Notes
