@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "build is disabled at DockerHub until they support Windows Containers"
