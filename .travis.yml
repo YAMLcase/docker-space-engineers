@@ -7,7 +7,7 @@ if: branch = master
 
 script:
 # - powershell set-executionpolicy unrestricted
-  - docker build -t "pixpan/steamcmd-wincore" .
-  - docker tag pixpan/steamcmd-wincore "pixpan/steamcmd-wincore:$TRAVIS_BUILD_NUMBER"
+  - docker build -t "pixpan/space-engineers" .
+  - docker tag pixpan/space-engineers "pixpan/space-engineers:0.$TRAVIS_BUILD_NUMBER"
   - echo "$docker_password" | docker login -u "$docker_username" --password-stdin
-  - docker push "pixpan/steamcmd-wincore"
+  - docker push "pixpan/space-engineers"
