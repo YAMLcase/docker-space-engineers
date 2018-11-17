@@ -18,7 +18,7 @@ docker run \
     -v <C:/path/to/server-instance>:C:/data \
     pixpan/space-engineers
 ```
-</br>
+
 
 - Port 1973 is the default port for remote API.
 - Port 27016 is the default server port and must be UDP.
@@ -36,7 +36,7 @@ Unfortunately the VRage remote client doesn't have a save or quit feature.  you 
 ```
 C:\> taskkill /IM SpaceEngineersDedicated.exe
 ```
-</br>
+
 
 If this command fails to stop the server, you will just need to wait for the autosave time to pass and then stop the container normally.
 
