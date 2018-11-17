@@ -1,6 +1,5 @@
 ## Space Engineers on Docker
-[![Build Status](https://travis-ci.com/yamlCase/docker-space-engineers.svg?branch=master)](https://travis-ci.com/yamlCase/docker-space-engineers)
-[![GitHub issues](https://img.shields.io/github/issues/yamlCase/docker-space-engineers.svg)](https://github.com/yamlCase/docker-space-engineers/issues)
+[![Build Status](https://travis-ci.com/yamlCase/docker-space-engineers.svg?branch=master)](https://travis-ci.com/yamlCase/docker-space-engineers)[![GitHub issues](https://img.shields.io/github/issues/yamlCase/docker-space-engineers.svg)](https://github.com/yamlCase/docker-space-engineers/issues)
 
 
 
@@ -24,13 +23,35 @@ docker run \
 - Port 27016 is the default server port and must be UDP.
 - C:\data\ on the container is for saves.
 
-### Data Folder
+### New Scenario
+Create a `SpaceEngineers-Dedicated.cfg` file with the `SpaceEngineersDedicated.exe` console program.
 
+### Import Save
+Copy the `Saves` directory into `C:\data`.  Edit the `LastSession.sbl` document and change the `<Path>c:\path\to\save</Path>` to take into account the new folder structure.
 
+### Save and Exit Gracefully
+Unfortunately the VRage remote client doesn't have a save or quit feature.  you will need to execute the following command on the docker container to prompt a save:
+
+```
+C:\> taskkill /IM SpaceEngineersDedicated.exe
+```
+If this command fails to stop the server, you will just need to wait for the autosave time to pass and then stop the container normally.
+
+### Orchestration Notes
+If you're running this container in a Kubernetes pod or some other orchestration engine, Change the Upgrade Policy to `stop old pods, then start new`.  Scaling, HA and FT have not been tested and are not likely a focus for Keen SWH development efforts. 
+
+### More Info
+For more information on Space Engineers Dedicated Servers, visit: https://www.spaceengineersgame.com/dedicated-servers.html
 
 ## Structure
 
 This image is designed to self-update both SteamCMD and Space Engineers everytime a container is created or started.  This is a departure from the "Docker Way", however is necessary due to a current lack of visibility for updates.
+
+## Limitations
+
+Space Engineers is still in a beta state.  There will be rapid development on the Dedicated Server experience, but for now make note of the current limitations:
+
+- There is no way to manually save your data.  Be sure you exit gracefully
 
 ## Automated Build
 This automated build is done on Travis-CI as it is (currently) the only free-to-use Open Source platform that supports Windows build machines.  If you wish to fork this project, be sure to create `$docker_username` and `$docker_password` on Travis as secret environment variables.
