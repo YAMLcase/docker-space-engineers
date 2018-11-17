@@ -20,10 +20,6 @@ docker run \
 ```
 
 
-- Port 1973 is the default port for remote API.
-- Port 27016 is the default server port and must be UDP.
-- C:\data\ on the container is for saves.
-
 ### New Scenario
 Create a `SpaceEngineers-Dedicated.cfg` file with the `SpaceEngineersDedicated.exe` console program.  Save this to `C:\data` on the container.
 
