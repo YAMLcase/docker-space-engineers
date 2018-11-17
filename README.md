@@ -1,4 +1,8 @@
 ## Space Engineers on Docker
+[![Build Status](https://travis-ci.com/yamlCase/docker-space-engineers.svg?branch=master)](https://travis-ci.com/yamlCase/docker-space-engineers)
+[![GitHub issues](https://img.shields.io/github/issues/yamlCase/docker-space-engineers.svg)](https://github.com/yamlCase/docker-space-engineers/issues)
+
+
 
 PixPan Studios presents Space Engineers on Docker.  It utilizes the [microsoft/windowsservercore:1803](https://hub.docker.com/r/microsoft/windowsservercore/) windows container image.  
 
@@ -12,9 +16,17 @@ docker run \
     -d \
     -p 27016:27016/udp \
     -p 1973:1973 \
-    -v </path/to/server-instance>:C:/data \
+    -v <C:/path/to/server-instance>:C:/data \
     pixpan/space-engineers
 ```
+
+- Port 1973 is the default port for remote API.
+- Port 27016 is the default server port and must be UDP.
+- C:\data\ on the container is for saves.
+
+### Data Folder
+
+
 
 ## Structure
 
