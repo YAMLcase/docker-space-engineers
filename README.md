@@ -5,7 +5,6 @@ PixPan Studios presents Space Engineers on Docker.  It utilizes the [microsoft/w
 ## Usage
 
 If there is a new Space Engineers server release, simply redeploy the container.
-
 ```
 docker run \
     -t \
