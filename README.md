@@ -51,7 +51,9 @@ This image is designed to self-update both SteamCMD and Space Engineers everytim
 
 Space Engineers is still in a beta state.  There will be rapid development on the Dedicated Server experience, but for now make note of the current limitations:
 
-- There is no way to manually save your data.  Be sure you exit gracefully
+- There is no way to manually save your data at this time.  Be sure you exit gracefully (see above)
+- SEDS Console runs in a new console that cannot be captured.  The rolling logs you see are exactly that, the log file being tailed.
+- There is no way to create a new scenario from the console.  You must create it with a local copy of `SpaceEngineersDedicated.exe` and save the config file as `SpaceEngineers-Dedicated.cfg` to the `C:\data` folder.
 
 ## Automated Build
 This automated build is done on Travis-CI as it is (currently) the only free-to-use Open Source platform that supports Windows build machines.  If you wish to fork this project, be sure to create `$docker_username` and `$docker_password` on Travis as secret environment variables.
