@@ -56,4 +56,3 @@ Space Engineers is still in a beta state.  There will be rapid development on th
 
 ## Automated Build
 This automated build is done on Travis-CI as it is (currently) the only free-to-use Open Source platform that supports Windows build machines.  If you wish to fork this project, be sure to create `$docker_username` and `$docker_password` on Travis as secret environment variables.
-   
